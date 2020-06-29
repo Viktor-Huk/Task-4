@@ -1,0 +1,16 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="sort_entries">
+        <item>Brand</item>
+        <item>Year</item>
+        <item>Price</item>
+        <item>No sort</item>
+    </string-array>
+
+    <string-array name="sort_values">
+        <item>brand</item>
+        <item>year</item>
+        <item>price</item>
+        <item>no sort</item>
+    </string-array>
+</resources>

@@ -1,0 +1,11 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        app:defaultValue="@string/brand"
+        app:entries="@array/sort_entries"
+        app:entryValues="@array/sort_values"
+        app:key="sort"
+        app:title="@string/sort_by"
+        app:useSimpleSummaryProvider="true"/>
+
+</PreferenceScreen>
