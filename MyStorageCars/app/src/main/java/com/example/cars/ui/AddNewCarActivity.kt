@@ -1,10 +1,11 @@
-package com.example.cars
+package com.example.cars.ui
 
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.cars.R
 import com.example.cars.databinding.ActivityAddNewCarBinding
-import com.example.cars.db.Car
+import com.example.cars.model.Car
 import com.example.cars.db.Manager.DatabaseManager
 
 class AddNewCarActivity : AppCompatActivity() {
@@ -37,7 +38,14 @@ class AddNewCarActivity : AppCompatActivity() {
     inner class MyTask : AsyncTask<Car, Void, Void>() {
 
         override fun doInBackground(vararg params: Car?): Void? {
-            dbManager.add(params)
+
+            val newCar = Car(
+                params[0]?.brand,
+                params[0]?.year,
+                params[0]?.price
+            )
+
+            dbManager.add(newCar)
             return null
         }
 

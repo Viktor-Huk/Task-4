@@ -1,14 +1,14 @@
-package com.example.cars.adapter
+package com.example.cars.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cars.db.Car
+import com.example.cars.model.Car
 import com.example.cars.R
 
 class CarAdapter : RecyclerView.Adapter<CarViewHolder>() {
 
-    private var dataSet: List<Car> = mutableListOf()
+    private var dataSet: List<Car> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
         val view = LayoutInflater.from(parent.context)

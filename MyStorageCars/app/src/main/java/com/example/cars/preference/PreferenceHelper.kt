@@ -1,11 +1,21 @@
 package com.example.cars.preference
 
+import android.content.Context
+import com.example.cars.App
+import com.example.cars.model.SortType
+
 object PreferenceHelper {
 
-    const val KEY_PREF_SORT = "sort"
-    const val TYPE_SORT_BRAND = "brand"
-    const val TYPE_SORT_YEAR = "year"
-    const val TYPE_SORT_PRICE = "price"
-    const val TYPE_SORT_NOSORT = "nosort"
+    private val prefs by lazy {
+        App.INSTANCE.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+    }
 
+    private const val SORT_TYPE = "sort"
+    private const val PREFS = "CarPrefs"
+
+    fun getSortType(): String = prefs.getString(SORT_TYPE, "")?:""
+
+    fun setSortType(sortType: SortType) {
+        prefs.edit().putString(SORT_TYPE, sortType.name).apply()
+    }
 }

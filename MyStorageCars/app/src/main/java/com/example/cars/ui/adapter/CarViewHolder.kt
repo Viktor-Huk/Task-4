@@ -1,4 +1,4 @@
-package com.example.cars.adapter
+package com.example.cars.ui.adapter
 
 import android.view.View
 import android.widget.TextView

@@ -1,10 +1,12 @@
-package com.example.cars.preference
+package com.example.cars.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
 import com.example.cars.R
+import com.example.cars.model.SortType
+import com.example.cars.preference.PreferenceHelper
 
 class SettingFragment : PreferenceFragmentCompat() {
 
@@ -16,14 +18,6 @@ class SettingFragment : PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        select = findPreference(PreferenceHelper.TYPE_SORT_NOSORT)
-    }
-
-    companion object {
-        const val KEY_PREF_SORT = "sort"
-        const val TYPE_SORT_BRAND = "brand"
-        const val TYPE_SORT_YEAR = "year"
-        const val TYPE_SORT_PRICE = "price"
-        const val TYPE_SORT_NOSORT = "nosort"
+        select = findPreference(SortType.NO_SORT.name)
     }
 }

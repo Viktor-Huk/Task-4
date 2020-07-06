@@ -1,6 +1,6 @@
 package com.example.cars.db.Entity
 
-import com.example.cars.db.Car
+import com.example.cars.model.Car
 import com.j256.ormlite.field.DatabaseField
 import com.j256.ormlite.table.DatabaseTable
 
