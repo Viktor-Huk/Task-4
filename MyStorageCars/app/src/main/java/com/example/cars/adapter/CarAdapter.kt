@@ -12,7 +12,7 @@ class CarAdapter : RecyclerView.Adapter<CarViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_view_item, parent, false)
+            .inflate(R.layout.item_view_car, parent, false)
 
         return CarViewHolder(view)
     }

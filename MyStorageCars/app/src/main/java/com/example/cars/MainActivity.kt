@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import com.example.cars.adapter.CarAdapter
 import com.example.cars.databinding.ActivityMainBinding
 import com.example.cars.db.Car
 import com.example.cars.db.Manager.DatabaseManager
+import com.example.cars.preference.PreferenceHelper
 import com.example.cars.preference.SettingFragment
 import com.example.cars.preference.SettingsActivity
 
@@ -70,24 +72,26 @@ class MainActivity : AppCompatActivity() {
 
             val sharedPreference = PreferenceManager.getDefaultSharedPreferences(this@MainActivity)
             val typeSort = sharedPreference.getString(SettingFragment.KEY_PREF_SORT, SettingFragment.TYPE_SORT_NOSORT)
+            var sortResult: List<Car>?
 
-            with(SettingFragment) {
-
-                when(typeSort) {
-                    TYPE_SORT_BRAND -> {
-                        result?.sortedBy { it.brand }?.let { carAdapter.updateData(it) }
+            when(typeSort) {
+                    PreferenceHelper.TYPE_SORT_BRAND -> {
+                        sortResult = result?.sortedBy { it.brand }
+                        Log.i("tag", "$sortResult")
                     }
-                    TYPE_SORT_YEAR -> {
-                        result?.sortedBy { it.year }?.let { carAdapter.updateData(it) }
+                    PreferenceHelper.TYPE_SORT_YEAR -> {
+                        sortResult = result?.sortedBy { it.year }
                     }
-                    TYPE_SORT_PRICE -> {
-                        result?.sortedBy { it.price }?.let { carAdapter.updateData(it) }
+                    PreferenceHelper.TYPE_SORT_PRICE -> {
+                        sortResult = result?.sortedBy { it.price }
                     }
                     else -> {
-                        result?.let { carAdapter.updateData(it) }
+                        sortResult = result
                     }
                 }
-            }
+
+            sortResult?.let { carAdapter.updateData(it) }
+
             super.onPostExecute(result)
         }
     }

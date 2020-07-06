@@ -16,7 +16,7 @@ class SettingFragment : PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        select = findPreference(TYPE_SORT_NOSORT)
+        select = findPreference(PreferenceHelper.TYPE_SORT_NOSORT)
     }
 
     companion object {

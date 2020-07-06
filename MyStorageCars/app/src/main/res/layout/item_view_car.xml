@@ -8,20 +8,20 @@
     <TextView
         android:id="@+id/brandTextView"
         android:text="@string/brand"
-        style="@style/ItemList"
+        style="@style/ItemListCarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/yearTextView"
-        style="@style/ItemList"
+        style="@style/ItemListCarStyle"
         android:text="@string/year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/priceTextView"
-        style="@style/ItemList"
+        style="@style/ItemListCarStyle"
         android:text="@string/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
