@@ -3,7 +3,6 @@ package com.example.cars.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cars.R
-import com.example.cars.ui.SettingFragment
 
 
 class SettingsActivity : AppCompatActivity() {

@@ -6,7 +6,6 @@ import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
 import com.example.cars.R
 import com.example.cars.model.SortType
-import com.example.cars.preference.PreferenceHelper
 
 class SettingFragment : PreferenceFragmentCompat() {
 

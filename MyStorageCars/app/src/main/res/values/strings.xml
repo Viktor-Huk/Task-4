@@ -11,9 +11,9 @@
     <string name="summarySortPrice">Sort by price</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
-    <string name="item_template_brand">BRAND</string>
-    <string name="item_template_year">YEAR</string>
-    <string name="item_template_price">PRICE</string>
+    <string name="item_template_brand">BRAND: %s</string>
+    <string name="item_template_year">YEAR: %d</string>
+    <string name="item_template_price">PRICE: %d</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

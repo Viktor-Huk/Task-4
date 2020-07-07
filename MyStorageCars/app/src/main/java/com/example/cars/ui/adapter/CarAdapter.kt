@@ -1,12 +1,13 @@
 package com.example.cars.ui.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cars.model.Car
 import com.example.cars.R
 
-class CarAdapter : RecyclerView.Adapter<CarViewHolder>() {
+class CarAdapter(private val context: Context) : RecyclerView.Adapter<CarViewHolder>() {
 
     private var dataSet: List<Car> = emptyList()
 
@@ -22,9 +23,12 @@ class CarAdapter : RecyclerView.Adapter<CarViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
-        holder.brandTextView.text = "BRAND: ${dataSet[position].brand}"
-        holder.yearTextView.text = "YEAR: ${dataSet[position].year}"
-        holder.priceTextView.text = "PRICE: ${dataSet[position].price}"
+
+        with(holder) {
+            brandTextView.text = brandTextView.context.getString(R.string.item_template_brand, dataSet[position].brand)
+            yearTextView.text = brandTextView.context.getString(R.string.item_template_year, dataSet[position].year)
+            priceTextView.text = brandTextView.context.getString(R.string.item_template_price, dataSet[position].price)
+        }
     }
 
     fun updateData(newList: List<Car>) {

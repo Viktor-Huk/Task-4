@@ -16,7 +16,7 @@ import com.example.cars.preference.PreferenceHelper
 
 class MainActivity : AppCompatActivity() {
 
-    private val carAdapter = CarAdapter()
+    private val carAdapter = CarAdapter(this)
     private lateinit var binding: ActivityMainBinding
     private var queryTask: QueryTask? = null
 
